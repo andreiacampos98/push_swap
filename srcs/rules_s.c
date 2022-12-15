@@ -29,15 +29,18 @@ void    rules_s_swap_top(t_stack *x)
 void    rules_sa_swap_top(t_stack *a)
 {
     rules_s_swap_top(a);
+    ft_putstr("sa\n");
 }
 
 void    rules_sb_swap_top(t_stack *b)
 {
     rules_s_swap_top(b);
+    ft_putstr("sb\n");
 }
 
 void    rules_ss_swap_top(t_stack *a, t_stack *b)
 {
     rules_sa_swap_top(a);
     rules_sb_swap_top(b);
+    ft_putstr("ss\n");
 }

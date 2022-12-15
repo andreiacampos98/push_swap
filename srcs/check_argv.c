@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules_p.c                                          :+:      :+:    :+:   */
+/*   check_argv.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/12 15:26:26 by marvin           ###   ########.fr       */
+/*   Created: 2022/12/15 11:12:58 by marvin            #+#    #+#             */
+/*   Updated: 2022/12/15 11:12:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rules_pa_topb_to_topa(t_stack *a, t_stack *b)
+int arg_is_number(char *argv)
 {
-	int	i;
+    int i;
 
-	i = a->top + 1;
-	a->int_list[i] = b->int_list[b->top];
-	b->top--;
-	ft_putstr("pa\n");
+    i = 0;
+    if (ft_issign(argv[i]) && argv[i + 1] != '\0')
+        i++;
+    while (argv[i] && ft_isdigit(argv[i]))
+        i++;
+    if (argv[i] != '\0' && !ft_isdigit(argv[i]))
+        return (0);
+    return (1);    
 }
 
-void	rules_pb_topa_to_topb(t_stack *b, t_stack *a)
+int there_is_duplicates(char *argv)
 {
-	int	i;
 
-	i = b->top + 1;
-	b->int_list[i] = a->int_list[a->top];
-	a->top--;
-	ft_putstr("pb\n");
+}
+
+int arg_is_zero(char *argv)
+{
+
+}
+
+int argv_is_corrected(char **argv)
+{
+
 }

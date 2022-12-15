@@ -30,15 +30,18 @@ void    rules_r_top_bottom(t_stack *x)
 void    ra(t_stack *a)
 {
     rules_r_top_bottom(a);
+    ft_putstr("ra\n");
 }
 
 void    rb(t_stack *b)
 {
     rules_r_top_bottom(b);
+    ft_putstr("rb\n");
 }
 
 void    rr(t_stack *a, t_stack *b)
 {
     ra(a);
     rb(b);
+    ft_putstr("rr\n");
 }

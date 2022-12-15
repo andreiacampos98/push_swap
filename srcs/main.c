@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules_p.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/12 15:26:26 by marvin           ###   ########.fr       */
+/*   Created: 2022/12/15 11:16:50 by marvin            #+#    #+#             */
+/*   Updated: 2022/12/15 11:16:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rules_pa_topb_to_topa(t_stack *a, t_stack *b)
+int main(int argc, char **argv)
 {
-	int	i;
+    t_stack	*a;
+	t_stack	*b;
 
-	i = a->top + 1;
-	a->int_list[i] = b->int_list[b->top];
-	b->top--;
-	ft_putstr("pa\n");
-}
-
-void	rules_pb_topa_to_topb(t_stack *b, t_stack *a)
-{
-	int	i;
-
-	i = b->top + 1;
-	b->int_list[i] = a->int_list[a->top];
-	a->top--;
-	ft_putstr("pb\n");
+	if(argc < 2)
+		return (0);
+	if (!argv_is_corrected(argv))
+		exit_error(NULL, NULL);
+	b = NULL;
+	a = initialize(argc, argv);
+	return (0);
 }
