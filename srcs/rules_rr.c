@@ -12,19 +12,18 @@
 
 #include "./includes/push_swap.h"
 
-void    rules_rr_bottom_top(t_stack *x)
+void    rules_rr_bottom_top(t_stack **x)
 {
-    int   lower;
-    int   i;
+    t_stack *tmp;
+    t_stack *y;
+    t_stack *before_y;
 
-    lower = x->int_list[0];
-    i = x->top;
-    x->int_list[i] = lower;
-    while (i > 0)
-    {
-        x->int_list[i - 1] = x->int_list[i];
-        i--;
-    }
+    tmp = *x;
+    *y = get_stack_bottom(*x);
+    *x = *y;
+    (*x)->next = tmp;
+    before_y = get_stack_before_bottom(*stack); 
+    before_y->next = NULL;
 }
 
 void    rra(t_stack *a)

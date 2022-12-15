@@ -69,3 +69,8 @@ t_stack	*get_stack_bottom(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
+void	assign_index(t_stack *a)
+{
+
+}

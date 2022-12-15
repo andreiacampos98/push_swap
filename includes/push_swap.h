@@ -29,6 +29,13 @@ typedef struct s_stack {
 	struct s_stack	*next;
 }				t_stack;
 
-
+void    rr(t_stack *a, t_stack *b);
+void    rb(t_stack *b);
+void    ra(t_stack *a);
+void    rules_r_top_bottom(t_stack **x);
+void    rrr(t_stack *a, t_stack *b);
+void    rrb(t_stack *b);
+void    rra(t_stack *a);
+void    rules_rr_bottom_top(t_stack *x);
 
 #endif
