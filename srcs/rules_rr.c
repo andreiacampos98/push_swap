@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/15 17:30:49 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/15 18:03:01 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void    rules_rr_bottom_top(t_stack **x)
     t_stack *before_y;
 
     tmp = *x;
-    *y = get_stack_bottom(*x);
-    *x = *y;
+    y = get_stack_bottom(*x);
+    *x = y;
     (*x)->next = tmp;
     before_y = get_stack_before_bottom(*x); 
     before_y->next = NULL;
