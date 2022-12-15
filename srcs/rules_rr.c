@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules.c                                            :+:      :+:    :+:   */
+/*   rules_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/12 09:13:55 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/15 17:30:49 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,15 @@ void    rules_rr_bottom_top(t_stack **x)
     *y = get_stack_bottom(*x);
     *x = *y;
     (*x)->next = tmp;
-    before_y = get_stack_before_bottom(*stack); 
+    before_y = get_stack_before_bottom(*x); 
     before_y->next = NULL;
+}
+
+t_stack *get_stack_before_bottom(t_stack *x)
+{
+    while (x && x->next && x->next->next != NULL)
+        x = x->next;
+    return (x);
 }
 
 void    rra(t_stack *a)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:15:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/12 09:15:01 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/15 17:34:19 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@
 #  define MAX_INT 2147483647
 # endif
 
-typedef struct s_stack {
+
+typedef struct s_stack
+{
 	int				value;
 	int				index;
 	struct s_stack	*next;
-}				t_stack;
+}	t_stack;
 
 void    rr(t_stack *a, t_stack *b);
 void    rb(t_stack *b);

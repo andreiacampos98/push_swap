@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 09:15:28 by marvin            #+#    #+#              #
-#    Updated: 2022/12/12 09:15:28 by marvin           ###   ########.fr        #
+#    Updated: 2022/12/15 17:37:47 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS := -Wall -Wextra -Werror
 
 LIBFT = ./libft/libft.a
 
-SRCS := /srcs/rules.c
+SRCS := /srcs/rules_p.c /srcs/rules_r.c /srcs/rules_rr.c /srcs/rules_s.c /srcs/utils.c /srcs/check_argv.c /srcs/initialize.c /srcs/main.c /srcs/push_swap.c
 
 OBJS := $(SRCS:.c=.o) 
 
