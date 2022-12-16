@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:27:35 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/15 17:34:33 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:58:31 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,32 @@ t_stack	*get_stack_bottom(t_stack *stack)
 	return (stack);
 }
 
-void	assign_index(t_stack *a)
+void	assign_index(t_stack *a, int stack_size)
 {
+	t_stack	*highest;
+	t_stack	*ptr;
+	int		value;
 
+	while(stack_size > 0)
+	{
+		ptr = a;
+		highest = NULL;
+		value = INT_MIN;
+		while (ptr)
+		{
+			if (ptr->value == INT_MIN && ptr->index == 0)
+				
+			if (ptr->value > value && a->index == 0)
+			{
+				value = ptr->value;
+				highest = ptr;
+				ptr = a;
+			}
+			else
+				ptr = ptr->next;
+		}
+		if (highest != NULL)
+			highest->index = stack_size;
+		stack_size--;
+	}
 }

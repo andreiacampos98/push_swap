@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   rules_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/12 15:26:26 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/16 18:59:00 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rules_pa_topb_to_topa(t_stack *a, t_stack *b)
+void	rules_pa_topb_to_topa(t_stack **a, t_stack **b)
 {
-	int	i;
+	t_stack	*temp;
 
-	i = a->top + 1;
-	a->int_list[i] = b->int_list[b->top];
-	b->top--;
+	temp = (*a)->next;
+	(*a)->next = *b;
+	*b = *a;
+	*a = temp;
 	ft_putstr("pa\n");
 }
 
-void	rules_pb_topa_to_topb(t_stack *b, t_stack *a)
+void	rules_pb_topa_to_topb(t_stack **b, t_stack **a)
 {
-	int	i;
+	t_stack	*temp;
 
-	i = b->top + 1;
-	b->int_list[i] = a->int_list[a->top];
-	a->top--;
+	temp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = temp;
 	ft_putstr("pb\n");
 }

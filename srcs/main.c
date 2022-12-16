@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:16:50 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/15 11:16:50 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/16 22:04:28 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int main(int argc, char **argv)
 		exit_error(NULL, NULL);
 	b = NULL;
 	a = initialize(argc, argv);
+	assign_index(a, stack_size);
 	return (0);
 }
