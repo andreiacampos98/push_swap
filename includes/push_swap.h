@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:15:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/17 10:05:58 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/17 11:43:06 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
+	int				position;
 	struct s_stack	*next;
 }	t_stack;
 

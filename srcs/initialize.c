@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:27:35 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/17 10:03:36 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/17 11:43:37 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_stack	*stack_new(int nb)
 		return (NULL);
 	new->value = nb;
 	new->index = 0;
+	new->position = -1;
 	new->next = NULL;
 	return (new);
 }
