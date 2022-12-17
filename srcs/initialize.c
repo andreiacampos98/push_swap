@@ -6,13 +6,13 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:27:35 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/16 21:58:31 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/17 10:03:36 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-t_stack    *initialize(int argc, char **argv)
+t_stack	*initialize(int argc, char **argv)
 {
 	t_stack		*a;
 	long int	nb;
@@ -32,7 +32,7 @@ t_stack    *initialize(int argc, char **argv)
 			stack_add_bottom(&a, stack_new((int)nb));
 		i++;
 	}
-	return(a);
+	return (a);
 }
 
 t_stack	*stack_new(int nb)
@@ -76,7 +76,7 @@ void	assign_index(t_stack *a, int stack_size)
 	t_stack	*ptr;
 	int		value;
 
-	while(stack_size > 0)
+	while (stack_size > 0)
 	{
 		ptr = a;
 		highest = NULL;
