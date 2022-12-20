@@ -19,7 +19,7 @@ void	push_swap(t_stack *a, t_stack *b, int stack_size)
 	else if (stack_size == 3)
 		three_argc_sort(a);
 	else if (stack_size > 3 && !is_sorted(a))
-		sort();
+		sort(a, b);
 }
 
 int	is_sorted(t_stack *stack)
@@ -37,9 +37,9 @@ void	three_argc_sort(t_stack *a)
 {
 	if (is_sorted(a))
 		return ;
-	if (a->index == 3)
+	if (a->index == get_stack_size(a))
 		ra(a);
-	else if (a->next->index == 3)
+	else if (a->next->index == get_stack_size(a))
 		rra(a);
 	if (a->index > a->next->index)
 		sa(a);

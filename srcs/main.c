@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	if (!argv_is_corrected(argv))
+	if (!argv_is_correct(argv))
 		exit_error(NULL, NULL);
 	b = NULL;
 	a = initialize(argc, argv);

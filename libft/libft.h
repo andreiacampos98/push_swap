@@ -26,6 +26,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stdarg.h>
+# include <limits.h>
 
 int			ft_atoi(const char *str);
 int			ft_isalnum(int c);

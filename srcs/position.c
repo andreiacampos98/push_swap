@@ -48,5 +48,3 @@ int	get_position_for_lowest_index(t_stack **x)
 	}
 	return (position);
 }
-
-int	

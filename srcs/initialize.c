@@ -45,6 +45,9 @@ t_stack	*stack_new(int nb)
 	new->value = nb;
 	new->index = 0;
 	new->position = -1;
+	new->target_position = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
 	new->next = NULL;
 	return (new);
 }
@@ -69,34 +72,4 @@ t_stack	*get_stack_bottom(t_stack *stack)
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
-}
-
-void	assign_index(t_stack *a, int stack_size)
-{
-	t_stack	*highest;
-	t_stack	*ptr;
-	int		value;
-
-	while (stack_size > 0)
-	{
-		ptr = a;
-		highest = NULL;
-		value = INT_MIN;
-		while (ptr)
-		{
-			if (ptr->value == INT_MIN && ptr->index == 0)
-				
-			if (ptr->value > value && a->index == 0)
-			{
-				value = ptr->value;
-				highest = ptr;
-				ptr = a;
-			}
-			else
-				ptr = ptr->next;
-		}
-		if (highest != NULL)
-			highest->index = stack_size;
-		stack_size--;
-	}
 }

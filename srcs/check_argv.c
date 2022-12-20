@@ -60,7 +60,7 @@ int	arg_is_zero(char *argv)
 	return (1);
 }
 
-int	argv_is_corrected(char **argv)
+int	argv_is_correct(char **argv)
 {
 	int	i;
 	int	nbzeros;

@@ -14,20 +14,16 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
-
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-# endif
-
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-# endif
+# include <limits.h>
 
 typedef struct s_stack
 {
 	int				value;
 	int				index;
 	int				position;
+	int				target_position;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -39,7 +35,7 @@ int		get_stack_size(t_stack *a);
 int		arg_is_number(char *argv);
 int		there_is_duplicates(char **argv);
 int		arg_is_zero(char *argv);
-int		argv_is_corrected(char **argv);
+int		argv_is_correct(char **argv);
 
 t_stack	*initialize(int argc, char **argv);
 t_stack	*stack_new(int nb);
