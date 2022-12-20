@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 09:55:33 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/20 09:55:33 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/20 20:36:43 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-t_stack	*fill_highest(t_stack *ptr, t_stack *highest)
+t_stack	*fill_highest(t_stack *ptr, t_stack *a, t_stack *highest)
 {
 	int		value;
 
@@ -42,7 +42,7 @@ void	assign_index(t_stack *a, int stack_size)
 	{
 		ptr = a;
 		highest = NULL;
-		fill_highest(ptr, highest);
+		fill_highest(ptr, a, highest);
 		if (highest != NULL)
 			highest->index = stack_size;
 	}

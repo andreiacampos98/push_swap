@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:58:47 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/17 10:21:13 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/20 21:26:23 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rules_s_swap_top(t_stack *x)
 	int	temp;
 
 	if (x || x->next == NULL)
-		return (0);
+		return ;
 	temp = x->value;
 	x->value = x->next->value;
 	x->next->value = temp;

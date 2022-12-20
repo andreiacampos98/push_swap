@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/17 10:21:43 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/20 22:54:53 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ t_stack	*get_stack_before_bottom(t_stack *x)
 
 void	rra(t_stack *a)
 {
-	rules_rr_top_bottom(a);
+	rules_rr_bottom_top(&a);
 	ft_putstr("rra\n");
 }
 
 void	rrb(t_stack *b)
 {
-	rules_rr_top_bottom(b);
+	rules_rr_bottom_top(&b);
 	ft_putstr("rrb\n");
 }
 

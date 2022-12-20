@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:43:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/20 10:43:19 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/20 23:18:07 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	push_to_b(t_stack **a, t_stack **b)
 	}
 }
 
-void	sort_stack_a(t_stack **a)
+void	sort_stack_a(t_stack *a)
 {
 	int	stack_size;
 	int	lowest;
@@ -64,16 +64,16 @@ void	sort_stack_a(t_stack **a)
 	}
 }
 
-t_stack	sort(t_stack **a, t_stack **b)
+void	sort(t_stack *a, t_stack *b)
 {
-	push_to_b(a, b);
-	three_argc_sort(a, b);
-	while (*b)
+	push_to_b(&a, &b);
+	three_argc_sort(a);
+	/*while (b)
 	{
 		get_target_position(a, b);
 		get_cost(a, b);
 		do_cheapest_move(a, b);
-	}
+	}*/
 	if (!is_sorted(a))
 		sort_stack_a(a);
 }

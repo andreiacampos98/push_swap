@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/17 10:08:11 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/20 23:15:13 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,24 @@ void	three_argc_sort(t_stack *a)
 {
 	if (is_sorted(a))
 		return ;
-	if (a->index == get_stack_size(a))
+	if (a->index == get_stack_size(&a))
 		ra(a);
-	else if (a->next->index == get_stack_size(a))
+	else if (a->next->index == get_stack_size(&a))
 		rra(a);
 	if (a->index > a->next->index)
-		sa(a);
+		rules_sa_swap_top(a);
 }
 
-int	get_stack_size(t_stack *a)
+int	get_stack_size(t_stack **a)
 {
 	int	stack_size;
 
 	stack_size = 0;
 	if (!a)
 		return (0);
-	while (a->next != NULL)
+	while ((*a)->next != NULL)
 	{
-		a = a->next;
+		*a = (*a)->next;
 		stack_size++;
 	}
 	return (stack_size);
