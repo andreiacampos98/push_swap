@@ -52,6 +52,7 @@ int	find_highest_index(t_stack *stack)
 	int		index;
 
 	index = stack->index;
+	printf("%i", index);
 	while (stack)
 	{
 		if (stack->index > index)
@@ -65,7 +66,7 @@ int	get_stack_size(t_stack *a)
 {
 	int	stack_size;
 
-	stack_size = 0;
+	stack_size = 1;
 	if (!a)
 		return (0);
 	while (a->next != NULL)

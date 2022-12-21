@@ -10,16 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME := push_swap
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -I.
+CC := cc
+CFLAGS := -Wall -Wextra -Werror -I.
 
-LIBFT = ./libft/libft.a
+LIBFT := ./libft/libft.a
 
-SRCS = ./srcs/rules_p.c	./srcs/rules_r.c ./srcs/rules_rr.c ./srcs/rules_s.c ./srcs/utils.c	./srcs/check_argv.c	./srcs/initialize.c ./srcs/main.c ./srcs/push_swap.c ./srcs/index.c	./srcs/cheapest_move.c	./srcs/position.c ./srcs/main.c	./srcs/sort.c
+SRCS := ./srcs/rules_p.c	./srcs/rules_r.c ./srcs/rules_rr.c ./srcs/rules_s.c ./srcs/utils.c	./srcs/check_argv.c	./srcs/initialize.c ./srcs/main.c ./srcs/push_swap.c ./srcs/index.c	./srcs/cheapest_move.c	./srcs/position.c ./srcs/sort.c
 
-OBJS = $(SRCS:.c=.o) 
+OBJS := $(SRCS:.c=.o) 
 
 all: $(NAME)
 

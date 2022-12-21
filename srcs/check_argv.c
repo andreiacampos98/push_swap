@@ -65,13 +65,13 @@ int	argv_is_correct(char **argv)
 	int	i;
 	int	nbzeros;
 
-	i = 0;
+	i = 1;
 	nbzeros = 0;
 	while (argv[i])
 	{
-		if (arg_is_number(argv[i]))
+		if (!arg_is_number(argv[i]))
 			return (0);
-		nbzeros += arg_is_number(argv[i]);
+		nbzeros += arg_is_zero(argv[i]);
 		i++;
 	}
 	if (nbzeros > 1)
