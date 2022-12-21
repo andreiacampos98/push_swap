@@ -27,7 +27,7 @@ $(LIBFT):
 	$(MAKE) -C ./libft
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o push_swap
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 clean:
 	$(MAKE) clean -C ./libft

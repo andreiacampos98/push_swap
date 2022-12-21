@@ -18,7 +18,7 @@ void	push_to_b(t_stack **a, t_stack **b)
 	int	i;
 	int	pushed;
 
-	stack_size = get_stack_size(a);
+	stack_size = get_stack_size(*a);
 	i = 0;
 	pushed = 0;
 	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
@@ -39,12 +39,12 @@ void	push_to_b(t_stack **a, t_stack **b)
 	}
 }
 
-void	sort_stack_a(t_stack *a)
+void	sort_stack_a(t_stack **a)
 {
 	int	stack_size;
 	int	lowest;
 
-	stack_size = get_stack_size(a);
+	stack_size = get_stack_size(*a);
 	lowest = get_position_for_lowest_index(a);
 	if (lowest > stack_size / 2)
 	{
@@ -64,9 +64,9 @@ void	sort_stack_a(t_stack *a)
 	}
 }
 
-void	sort(t_stack *a, t_stack *b)
+void	sort(t_stack **a, t_stack **b)
 {
-	push_to_b(&a, &b);
+	push_to_b(a, b);
 	three_argc_sort(a);
 	/*while (b)
 	{
@@ -74,6 +74,6 @@ void	sort(t_stack *a, t_stack *b)
 		get_cost(a, b);
 		do_cheapest_move(a, b);
 	}*/
-	if (!is_sorted(a))
+	if (!is_sorted(*a))
 		sort_stack_a(a);
 }

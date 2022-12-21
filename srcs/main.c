@@ -26,5 +26,8 @@ int	main(int argc, char **argv)
 	a = initialize(argc, argv);
 	stack_size = get_stack_size(a);
 	assign_index(a, stack_size);
+	push_swap(&a, &b, stack_size);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

@@ -12,33 +12,33 @@
 
 #include "./includes/push_swap.h"
 
-void	rules_s_swap_top(t_stack *x)
+void	rules_s_swap_top(t_stack **x)
 {
 	int	temp;
 
-	if (x || x->next == NULL)
+	if (x || (*x)->next == NULL)
 		return ;
-	temp = x->value;
-	x->value = x->next->value;
-	x->next->value = temp;
-	temp = x->index;
-	x->index = x->next->index;
-	x->next->index = temp;
+	temp = (*x)->value;
+	(*x)->value = (*x)->next->value;
+	(*x)->next->value = temp;
+	temp = (*x)->index;
+	(*x)->index = (*x)->next->index;
+	(*x)->next->index = temp;
 }
 
-void	rules_sa_swap_top(t_stack *a)
+void	rules_sa_swap_top(t_stack **a)
 {
 	rules_s_swap_top(a);
 	ft_putstr("sa\n");
 }
 
-void	rules_sb_swap_top(t_stack *b)
+void	rules_sb_swap_top(t_stack **b)
 {
 	rules_s_swap_top(b);
 	ft_putstr("sb\n");
 }
 
-void	rules_ss_swap_top(t_stack *a, t_stack *b)
+void	rules_ss_swap_top(t_stack **a, t_stack **b)
 {
 	rules_sa_swap_top(a);
 	rules_sb_swap_top(b);

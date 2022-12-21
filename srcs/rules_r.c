@@ -24,19 +24,19 @@ void	rules_r_top_bottom(t_stack **x)
 	y->next = tmp;
 }
 
-void	ra(t_stack *a)
+void	ra(t_stack **a)
 {
-	rules_r_top_bottom(&a);
+	rules_r_top_bottom(a);
 	ft_putstr("ra\n");
 }
 
-void	rb(t_stack *b)
+void	rb(t_stack **b)
 {
-	rules_r_top_bottom(&b);
+	rules_r_top_bottom(b);
 	ft_putstr("rb\n");
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack **a, t_stack **b)
 {
 	ra(a);
 	rb(b);

@@ -33,19 +33,19 @@ t_stack	*get_stack_before_bottom(t_stack *x)
 	return (x);
 }
 
-void	rra(t_stack *a)
+void	rra(t_stack **a)
 {
-	rules_rr_bottom_top(&a);
+	rules_rr_bottom_top(a);
 	ft_putstr("rra\n");
 }
 
-void	rrb(t_stack *b)
+void	rrb(t_stack **b)
 {
-	rules_rr_bottom_top(&b);
+	rules_rr_bottom_top(b);
 	ft_putstr("rrb\n");
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a);
 	rrb(b);
