@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/20 23:15:13 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/21 18:35:56 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	find_highest_index(t_stack *stack)
 	int		index;
 
 	index = stack->index;
-	printf("%i", index);
 	while (stack)
 	{
 		if (stack->index > index)
@@ -74,5 +73,6 @@ int	get_stack_size(t_stack *a)
 		a = a->next;
 		stack_size++;
 	}
+	//printf("%i\n", stack_size);
 	return (stack_size);
 }

@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:15:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/20 23:17:21 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:29:09 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_stack	*stack_new(int nb);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack);
 
-t_stack	*fill_highest(t_stack *ptr, t_stack *a, t_stack *highest);
+void	fill_highest(t_stack *ptr, t_stack *a, t_stack *highest);
 void	assign_index(t_stack *a, int stack_size);
 
 void	push_swap(t_stack **a, t_stack **b, int stack_size);
