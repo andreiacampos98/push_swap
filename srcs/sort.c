@@ -68,12 +68,12 @@ void	sort(t_stack **a, t_stack **b)
 {
 	push_to_b(a, b);
 	three_argc_sort(a);
-	/*while (b)
+	while (b)
 	{
 		get_target_position(a, b);
 		get_cost(a, b);
 		do_cheapest_move(a, b);
-	}*/
+	}
 	if (!is_sorted(*a))
 		sort_stack_a(a);
 }

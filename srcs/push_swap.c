@@ -47,6 +47,7 @@ void	three_argc_sort(t_stack **a)
 	if ((*a)->index > (*a)->next->index)
 		rules_sa_swap_top(a);
 }
+
 int	find_highest_index(t_stack *stack)
 {
 	int		index;

@@ -38,7 +38,6 @@ t_stack	*stack_new(int nb);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack);
 
-//void	fill_highest(t_stack *ptr, t_stack *a, t_stack *highest);
 void	assign_index(t_stack *a, int stack_size);
 
 void	push_swap(t_stack **a, t_stack **b, int stack_size);
@@ -53,6 +52,18 @@ void	sort(t_stack **a, t_stack **b);
 
 void	define_position(t_stack **x);
 int		get_position_for_lowest_index(t_stack **x);
+int		get_target(t_stack **a, int b_idx,int target_idx, int target_pos);
+void	get_target_position(t_stack **a, t_stack **b);
+void	get_cost(t_stack **a, t_stack **b);
+
+int		nb_abs(int cost_x);
+void     do_move(t_stack **a, t_stack **b, int cost_a, int cost_b);
+void	do_cheapest_move(t_stack **a, t_stack **b);
+
+void	do_rr_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void	do_r_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void	do_r_a(t_stack **a, int *cost);
+void	do_r_b(t_stack **b, int *cost);
 
 void	rr(t_stack **a, t_stack **b);
 void	rb(t_stack **b);
