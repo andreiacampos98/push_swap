@@ -26,6 +26,31 @@ int	arg_is_number(char *argv)
 	return (1);
 }
 
+int	nb_cmp(const char *s1, const char *s2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = i;
+	if (s1[i] == '+')
+	{
+		if (s2[j] != '+')
+			i++;
+	}
+	else
+	{
+		if (s2[j] == '+')
+			j++;
+	}
+	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
+	{
+		i++;
+		j++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
+}
+
 int	there_is_duplicates(char **argv)
 {
 	int	i;
@@ -37,7 +62,7 @@ int	there_is_duplicates(char **argv)
 		j = i + 1;
 		while (argv[j])
 		{
-			if (argv[i] == argv[j])
+			if (nb_cmp(argv[i], argv[j]) == 0)
 				return (1);
 			j++;
 		}
@@ -70,13 +95,22 @@ int	argv_is_correct(char **argv)
 	while (argv[i])
 	{
 		if (!arg_is_number(argv[i]))
+		{
+			//printf("is not a number");
 			return (0);
+		}
 		nbzeros += arg_is_zero(argv[i]);
 		i++;
 	}
 	if (nbzeros > 1)
+	{
+		//printf("Zeros");
 		return (0);
+	}
 	if (there_is_duplicates(argv))
+	{
+		//printf("there is duplicates");
 		return (0);
+	}
 	return (1);
 }

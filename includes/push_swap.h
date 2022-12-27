@@ -28,6 +28,7 @@ typedef struct s_stack
 }	t_stack;
 
 int		arg_is_number(char *argv);
+int		nb_cmp(const char *s1, const char *s2);
 int		there_is_duplicates(char **argv);
 int		arg_is_zero(char *argv);
 int		argv_is_correct(char **argv);
@@ -37,7 +38,7 @@ t_stack	*stack_new(int nb);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack);
 
-void	fill_highest(t_stack *ptr, t_stack *a, t_stack *highest);
+//void	fill_highest(t_stack *ptr, t_stack *a, t_stack *highest);
 void	assign_index(t_stack *a, int stack_size);
 
 void	push_swap(t_stack **a, t_stack **b, int stack_size);

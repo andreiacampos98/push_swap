@@ -25,7 +25,9 @@ void	assign_index(t_stack *stack_a, int stack_size)
 		highest = NULL;
 		while (ptr)
 		{
-			if (ptr->value >= value && ptr->index == 0)
+			if (ptr->value == INT_MIN && ptr->index == 0)
+				ptr->index = 1;
+			if (ptr->value > value && ptr->index == 0)
 			{
 				value = ptr->value;
 				highest = ptr;

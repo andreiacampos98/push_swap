@@ -24,13 +24,19 @@ int	main(int argc, char **argv)
 		exit_error(NULL, NULL);
 	b = NULL;
 	a = initialize(argc, argv);
-	while (a->next != NULL)
+	/*while (a->value != '\0')
 	{
 		printf("%i\n", a->value);
 		a = a->next;
-	}
+	}*/
 	stack_size = get_stack_size(a);
+	printf("%i\n", stack_size);
 	assign_index(a, stack_size);
+	/*while (a->value != '\0')
+	{
+		printf("%i\n", a->index);
+		a = a->next;
+	}*/
 	push_swap(&a, &b, stack_size);
 	free_stack(&a);
 	free_stack(&b);
