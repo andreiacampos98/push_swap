@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 18:35:56 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 16:34:10 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	push_swap(t_stack **a, t_stack **b, int stack_size)
 	else if (stack_size == 3)
 		three_argc_sort(a);
 	else if (stack_size > 3 && !is_sorted(*a))
+	{
 		sort(a, b);
+	}
 }
 
 int	is_sorted(t_stack *stack)

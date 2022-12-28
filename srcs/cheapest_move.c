@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:04:19 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/20 23:04:51 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:35:08 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	do_cheapest_move(t_stack **a, t_stack **b)
 	cheapest = INT_MAX;
 	while (tmp)
 	{
-		if (nb_abs(tmp->cost_a) + nb_abs(tmp->cost_b) < nb_abs(cheapest))
+		if ((nb_abs(tmp->cost_a) + nb_abs(tmp->cost_b)) < nb_abs(cheapest))
 		{
 			cheapest = nb_abs(tmp->cost_a) + nb_abs(tmp->cost_b);
 			cost_a = tmp->cost_a;

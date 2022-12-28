@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:16:50 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 18:40:01 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 16:19:18 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int	main(int argc, char **argv)
 	{
 		printf("%i\n", a->index);
 		a = a->next;
+	}*/
+	/*push_to_b(&a, &b);
+	while (b->value != '\0')
+	{
+		printf("%i\n", b->value);
+		b = b->next;
 	}*/
 	push_swap(&a, &b, stack_size);
 	free_stack(&a);

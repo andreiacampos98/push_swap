@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:58:54 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/27 20:58:54 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/28 15:31:14 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	do_r_b(t_stack **b, int *cost)
 			(*cost)--;
 			rb(b);
 		}
-		else if (*cost > 0)
+		else if (*cost < 0)
 		{
 			(*cost)++;
 			rrb(b);

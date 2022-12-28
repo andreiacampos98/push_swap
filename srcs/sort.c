@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:43:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 17:11:25 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 16:34:53 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	sort(t_stack **a, t_stack **b)
 {
 	push_to_b(a, b);
 	three_argc_sort(a);
-	while (b)
+	while (*b)
 	{
 		get_target_position(a, b);
 		get_cost(a, b);
