@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:43:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/28 16:34:53 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 20:20:41 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ void	sort(t_stack **a, t_stack **b)
 		get_cost(a, b);
 		do_cheapest_move(a, b);
 	}
-	if (!is_sorted(*a))
-		sort_stack_a(a);
+	/*if (!is_sorted(*a))
+		sort_stack_a(a);*/
 }

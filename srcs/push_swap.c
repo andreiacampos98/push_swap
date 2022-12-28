@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/28 16:34:10 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 20:18:12 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ int	get_stack_size(t_stack *a)
 {
 	int	stack_size;
 
-	stack_size = 1;
+	stack_size = 0;
 	if (!a)
 		return (0);
-	while (a->next != NULL)
+	while (a)
 	{
 		a = a->next;
 		stack_size++;
