@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 11:35:44 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/28 20:15:38 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 22:09:22 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	define_position(t_stack **x)
 	}
 }
 
-int	get_position_for_lowest_index(t_stack **x)
+int	get_position_for_lowest_index(t_stack **x) //continuar aqui
 {
 	int		lowest_index;
 	int		position;
@@ -35,18 +35,19 @@ int	get_position_for_lowest_index(t_stack **x)
 
 	lowest_index = INT_MAX;
 	tmp = *x;
-	printf("eu sou burra");
+	//printf("eu sou burra");
 	define_position(x);
 	position = tmp->position;
 	while (tmp)
 	{
-		if (lowest_index > tmp->index)
+		if (tmp->index < lowest_index)
 		{
 			lowest_index = tmp->index;
 			position = tmp->position;
 		}
 		tmp = tmp->next;
 	}
+	printf("%i", position);
 	return (position);
 }
 
@@ -120,8 +121,8 @@ void	get_cost(t_stack **a, t_stack **b)
 	tmp_b = *b;
 	size_a = get_stack_size(tmp_a);
 	size_b = get_stack_size(tmp_b);
-	printf("size a %i\n", size_a);
-	printf("size b %i\n", size_a);
+	//printf("size a %i\n", size_a);
+	//printf("size b %i\n", size_b);
 	while (tmp_b)
 	{
 		tmp_b->cost_b = tmp_b->position;
@@ -132,11 +133,11 @@ void	get_cost(t_stack **a, t_stack **b)
 			tmp_b->cost_a = (size_a - tmp_b->target_position) * -1;
 		tmp_b = tmp_b->next;
 	}
-	while ((*b))
+	/*while ((*b))
 	{
 		printf("%i", (*b)->cost_a);
 		printf("%i", (*b)->cost_b);
 		printf("\n");
 		(*b) = (*b)->next;
-	}
+	}*/
 }

@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:43:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/28 20:20:41 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/28 21:36:09 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	sort_stack_a(t_stack **a)
 	int	lowest;
 
 	stack_size = get_stack_size(*a);
+	//printf("%i", stack_size);
 	lowest = get_position_for_lowest_index(a);
 	if (lowest > stack_size / 2)
 	{
@@ -74,6 +75,7 @@ void	sort(t_stack **a, t_stack **b)
 		get_cost(a, b);
 		do_cheapest_move(a, b);
 	}
-	/*if (!is_sorted(*a))
-		sort_stack_a(a);*/
+	//printf("%i", is_sorted(*a));
+	if (!is_sorted(*a))
+		sort_stack_a(a);
 }
