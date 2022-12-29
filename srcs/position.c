@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 11:35:44 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/28 22:09:22 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/29 20:54:54 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,24 @@ void	define_position(t_stack **x)
 
 int	get_position_for_lowest_index(t_stack **x) //continuar aqui
 {
-	int		lowest_index;
-	int		position;
 	t_stack	*tmp;
+	int		lowest_index;
+	int		lowest_pos;
 
-	lowest_index = INT_MAX;
 	tmp = *x;
-	//printf("eu sou burra");
+	lowest_index = INT_MAX;
 	define_position(x);
-	position = tmp->position;
+	lowest_pos = tmp->position;
 	while (tmp)
 	{
 		if (tmp->index < lowest_index)
 		{
 			lowest_index = tmp->index;
-			position = tmp->position;
+			lowest_pos = tmp->position;
 		}
 		tmp = tmp->next;
 	}
-	printf("%i", position);
-	return (position);
+	return (lowest_pos);
 }
 
 int	get_target(t_stack **a, int b_idx,int target_idx, int target_position)

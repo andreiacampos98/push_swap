@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/28 20:18:12 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/29 21:24:34 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,5 @@ int	get_stack_size(t_stack *a)
 		a = a->next;
 		stack_size++;
 	}
-	//printf("%i\n", stack_size);
 	return (stack_size);
 }
