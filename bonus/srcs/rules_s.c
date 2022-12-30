@@ -6,11 +6,11 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:58:47 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:48:37 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 11:19:04 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "./includes/checker.h"
 
 static void	swap(t_stack *stack)
 {

@@ -6,21 +6,12 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:04:19 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/30 10:29:45 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:45:06 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-/* get_cost:
-*	Calculates the cost of moving each element of stack B into the correct
-*	position in stack A.
-*	Two costs are calculated:
-*		cost_b represents the cost of getting the element to the top of the B stack
-*		cost_a represents the cost of getting to the right position in stack A.
-*	If the element is in the bottom half of the stack, the cost will be negative,
-*	if it is in the top half, the cost is positive. 
-*/
 void	get_cost(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp_a;
@@ -44,10 +35,6 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-/* do_cheapest_move:
-*	Finds the element in stack B with the cheapest cost to move to stack A
-*	and moves it to the correct position in stack A.
-*/
 void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;

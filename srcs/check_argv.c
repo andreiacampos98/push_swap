@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:12:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:40:56 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:45:41 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ int	nb_cmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }
 
-/* arg_is_number:
-*   Checks if the argument is a number. +1 1 and -1 are all valid numbers.
-*   Return: 1 if the argument is a number, 0 if not.
-*/
 static int	arg_is_number(char *av)
 {
 	int	i;
@@ -55,10 +51,6 @@ static int	arg_is_number(char *av)
 	return (1);
 }
 
-/* have_duplicates:
-*   Checks if the argument list has duplicate numbers.
-*   Return: 1 if a duplicate is found, 0 if there are none.
-*/
 static int	have_duplicates(char **av)
 {
 	int	i;
@@ -79,12 +71,6 @@ static int	have_duplicates(char **av)
 	return (0);
 }
 
-/* arg_is_zero:
-*   Checks the argument is a 0 to avoid 0 +0 -0 duplicates
-*	and 0 0000 +000 -00000000 too.
-*   Return: 1 if the argument is a zero, 0 if it contains
-*	anything else than a zero.
-*/
 static int	arg_is_zero(char *av)
 {
 	int	i;
@@ -99,10 +85,6 @@ static int	arg_is_zero(char *av)
 	return (1);
 }
 
-/* is_correct_input:
-*   Checks if the given arguments are all numbers, without duplicates.
-*   Return: 1 if the arguments are valid, 0 if not.
-*/
 int	is_correct_input(char **av)
 {
 	int	i;

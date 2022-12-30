@@ -1,16 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 09:55:33 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:46:11 by anaraujo         ###   ########.fr       */
+/*   Created: 2022/12/30 11:29:17 by anaraujo          #+#    #+#             */
+/*   Updated: 2022/12/30 11:29:20 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "./includes/checker.h"
+
+t_stack	*stack_new(int value)
+{
+	t_stack	*new;
+
+	new = malloc(sizeof * new);
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->index = 0;
+	new->pos = -1;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
+	new->next = NULL;
+	return (new);
+}
+
+t_stack	*get_stack_bottom(t_stack *stack)
+{
+	while (stack && stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}
+
+void	stack_add_bottom(t_stack **stack, t_stack *new)
+{
+	t_stack	*tail;
+
+	if (!new)
+		return ;
+	if (!*stack)
+	{
+		*stack = new;
+		return ;
+	}
+	tail = get_stack_bottom(*stack);
+	tail->next = new;
+}
 
 t_stack	*fill_stack_values(int ac, char **av)
 {
@@ -33,34 +72,4 @@ t_stack	*fill_stack_values(int ac, char **av)
 		i++;
 	}
 	return (stack_a);
-}
-
-
-void	assign_index(t_stack *stack_a, int stack_size)
-{
-	t_stack	*ptr;
-	t_stack	*highest;
-	int		value;
-
-	while (--stack_size > 0)
-	{
-		ptr = stack_a;
-		value = INT_MIN;
-		highest = NULL;
-		while (ptr)
-		{
-			if (ptr->value == INT_MIN && ptr->index == 0)
-				ptr->index = 1;
-			if (ptr->value > value && ptr->index == 0)
-			{
-				value = ptr->value;
-				highest = ptr;
-				ptr = stack_a;
-			}
-			else
-				ptr = ptr->next;
-		}
-		if (highest != NULL)
-			highest->index = stack_size;
-	}
 }
