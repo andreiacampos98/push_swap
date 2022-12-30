@@ -6,39 +6,55 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 09:06:11 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:33:53 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rotate(t_stack **x)
+/* rotate:
+*	The top element of the stack is sent to the bottom.
+*/
+static void	rotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tail;
 
-	tmp = *x;
-	*x = (*x)->next;
-	tail = get_stack_bottom(*x);
+	tmp = *stack;
+	*stack = (*stack)->next;
+	tail = get_stack_bottom(*stack);
 	tmp->next = NULL;
 	tail->next = tmp;
 }
 
-void	ra(t_stack **a)
+/* do_ra:
+*	Sends the top element of stack a to the bottom.
+*	Prints "ra" to the standard output.
+*/
+void	do_ra(t_stack **stack_a)
 {
-	rotate(a);
+	rotate(stack_a);
 	ft_putstr("ra\n");
 }
 
-void	rb(t_stack **b)
+/* do_rb:
+*	Sends the top element of stack b to the bottom.
+*	Prints "rb" to the standard output.
+*/
+void	do_rb(t_stack **stack_b)
 {
-	rotate(b);
+	rotate(stack_b);
 	ft_putstr("rb\n");
 }
 
-void	rr(t_stack **a, t_stack **b)
+/* do_rr:
+*	Sends the top element of both stack a and stack b to the bottom
+*	of their respective stacks.
+*	Prints "rr" to the standard output.
+*/
+void	do_rr(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate(a);
-	rotate(b);
+	rotate(stack_a);
+	rotate(stack_b);
 	ft_putstr("rr\n");
 }

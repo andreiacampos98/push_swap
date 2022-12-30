@@ -6,49 +6,16 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 08:59:30 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:33:20 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	push_swap(t_stack **a, t_stack **b, int stack_size)
-{
-	if (stack_size == 2 && !is_sorted(*a))
-		sa(a);
-	else if (stack_size == 3)
-		three_argc_sort(a);
-	else if (stack_size > 3 && !is_sorted(*a))
-		sort(a, b);
-}
-
-int	is_sorted(t_stack *stack)
-{
-	while (stack->next != NULL)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
-
-void	three_argc_sort(t_stack **a)
-{
-	int	highest;
-
-	if (is_sorted(*a))
-		return ;
-	highest = find_highest_index(*a);
-	if ((*a)->index == highest)
-		ra(a);
-	else if ((*a)->next->index == highest)
-		rra(a);
-	if ((*a)->index > (*a)->next->index)
-		sa(a);
-}
-
-int	find_highest_index(t_stack *stack)
+/* find_highest_index:
+*	Returns the highest index in a stack.
+*/
+static int	find_highest_index(t_stack *stack)
 {
 	int		index;
 
@@ -62,17 +29,30 @@ int	find_highest_index(t_stack *stack)
 	return (index);
 }
 
-int	get_stack_size(t_stack *a)
+/* tiny_sort:
+*	Sorts a stack of 3 numbers in 2 or fewer moves. The sorting is done by index
+*	rather than value. Example:
+*		values:		 0	 9	 2
+*		indexes:	[1]	[3]	[2]
+*	Solution, 2 moves:
+*	rra:
+*		values:		 2	 0	 9
+*		indexes:	[2]	[1]	[3]
+*	sa:
+*		values:		 0	 2	 9
+*		indexes:	[1]	[2]	[3]
+*/
+void	tiny_sort(t_stack **stack)
 {
-	int	stack_size;
+	int		highest;
 
-	stack_size = 0;
-	if (!a)
-		return (0);
-	while (a)
-	{
-		a = a->next;
-		stack_size++;
-	}
-	return (stack_size);
+	if (is_sorted(*stack))
+		return ;
+	highest = find_highest_index(*stack);
+	if ((*stack)->index == highest)
+		do_ra(stack);
+	else if ((*stack)->next->index == highest)
+		do_rra(stack);
+	if ((*stack)->index > (*stack)->next->index)
+		do_sa(stack);
 }

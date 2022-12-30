@@ -6,13 +6,48 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 09:55:33 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 09:19:39 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:30:44 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	assign_index(t_stack *a, int stack_size)
+/* fill_stack_values:
+*	Fills stack_a with the provided values.
+*	If the values are out of integer range, prints and error and exits the program.
+*/
+t_stack	*fill_stack_values(int ac, char **av)
+{
+	t_stack		*stack_a;
+	long int	nb;
+	int			i;
+
+	stack_a = NULL;
+	nb = 0;
+	i = 1;
+	while (i < ac)
+	{
+		nb = ft_atoi(av[i]);
+		if (nb > INT_MAX || nb < INT_MIN)
+			exit_error(&stack_a, NULL);
+		if (i == 1)
+			stack_a = stack_new((int)nb);
+		else
+			stack_add_bottom(&stack_a, stack_new((int)nb));
+		i++;
+	}
+	return (stack_a);
+}
+
+/* assign_index:
+*	Assigns an index to each value in stack a. This is a convenient way to order
+*	the stack because indexes can be checked and compared instead of actual values,
+*	which may or may not be adjacent to each other.
+*		ex. values:		-3	 0	 9	 2
+*		indexes:		[1]	[2]	[4]	[3]
+*	The indexes are assigned from highest (stack_size) to lowest (1).
+*/
+void	assign_index(t_stack *stack_a, int stack_size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
@@ -20,7 +55,7 @@ void	assign_index(t_stack *a, int stack_size)
 
 	while (--stack_size > 0)
 	{
-		ptr = a;
+		ptr = stack_a;
 		value = INT_MIN;
 		highest = NULL;
 		while (ptr)
@@ -31,7 +66,7 @@ void	assign_index(t_stack *a, int stack_size)
 			{
 				value = ptr->value;
 				highest = ptr;
-				ptr = a;
+				ptr = stack_a;
 			}
 			else
 				ptr = ptr->next;

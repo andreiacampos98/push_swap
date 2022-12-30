@@ -6,44 +6,59 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:58:47 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 08:57:39 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:34:24 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	swap(t_stack *x)
+
+/* swap:
+*	Swaps the top 2 elements of a stack.
+*	Does nothing if there is only one or no elements.
+*/
+static void	swap(t_stack *stack)
 {
 	int	tmp;
 
-	if (x == NULL || x->next == NULL)
+	if (stack == NULL || stack->next == NULL)
 		return ;
-	tmp = x->value;
-	x->value = x->next->value;
-	x->next->value = tmp;
-	tmp = x->index;
-	x->index = x->next->index;
-	x->next->index = tmp;
+	tmp = stack->value;
+	stack->value = stack->next->value;
+	stack->next->value = tmp;
+	tmp = stack->index;
+	stack->index = stack->next->index;
+	stack->next->index = tmp;
 }
 
-
-void	sa(t_stack **a)
+/* do_sa:
+*	Swaps the top 2 elements of stack a.
+*	Prints "sa" to the standard output.
+*/
+void	do_sa(t_stack **stack_a)
 {
-	swap(*a);
+	swap(*stack_a);
 	ft_putstr("sa\n");
 }
 
-
-void	sb(t_stack **b)
+/* do_sb:
+*	Swaps the top 2 elements of stack b.
+*	Prints "sb" to the standard output.
+*/
+void	do_sb(t_stack **stack_b)
 {
-	swap(*b);
+	swap(*stack_b);
 	ft_putstr("sb\n");
 }
 
-
-void	ss(t_stack **a, t_stack **b)
+/* do_ss:
+*	Swaps the top 2 elements of stack a and the top 2 elements
+*	of stack b.
+*	Prints "ss" to the standard output.
+*/
+void	do_ss(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(*a);
-	swap(*b);
+	swap(*stack_a);
+	swap(*stack_b);
 	ft_putstr("ss\n");
 }

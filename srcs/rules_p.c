@@ -6,13 +6,16 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 09:01:20 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 10:33:40 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	push(t_stack **src, t_stack **dest)
+/* push:
+*	Pushes the top element of src stack to the top of dest stack.
+*/
+static void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*tmp;
 
@@ -24,15 +27,23 @@ void	push(t_stack **src, t_stack **dest)
 	*src = tmp;
 }
 
-
-void	pa(t_stack **a, t_stack **b)
+/* do_pa:
+*	Pushes the top element of stack b to the top of stack a.
+*	Prints "pa" to the standard output.
+*/
+void	do_pa(t_stack **stack_a, t_stack **stack_b)
 {
-	push(b, a);
+	push(stack_b, stack_a);
 	ft_putstr("pa\n");
 }
 
-void	pb(t_stack **a, t_stack **b)
+/* do_pb:
+*	Pushes the top element of stack a to the top of stack b.
+*	Prints "pb" to the standard output.
+*/
+void	do_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	push(a, b);
+	push(stack_a, stack_b);
 	ft_putstr("pb\n");
 }
+
