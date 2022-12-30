@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:43:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/29 21:24:01 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 09:03:31 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push_to_b(t_stack **a, t_stack **b)
 	{
 		if ((*a)->index <= stack_size / 2)
 		{
-			rules_pb_topa_to_topb(b, a);
+			pb(a, b);
 			pushed++;
 		}
 		else
@@ -34,7 +34,7 @@ void	push_to_b(t_stack **a, t_stack **b)
 	}
 	while (stack_size - pushed > 3)
 	{
-		rules_pb_topa_to_topb(b, a);
+		pb(a, b);
 		pushed++;
 	}
 }

@@ -6,41 +6,44 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:58:47 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 17:11:34 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 08:57:39 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rules_s_swap_top(t_stack **x)
+void	swap(t_stack *x)
 {
-	int	temp;
+	int	tmp;
 
-	if (x || (*x)->next == NULL)
+	if (x == NULL || x->next == NULL)
 		return ;
-	temp = (*x)->value;
-	(*x)->value = (*x)->next->value;
-	(*x)->next->value = temp;
-	temp = (*x)->index;
-	(*x)->index = (*x)->next->index;
-	(*x)->next->index = temp;
+	tmp = x->value;
+	x->value = x->next->value;
+	x->next->value = tmp;
+	tmp = x->index;
+	x->index = x->next->index;
+	x->next->index = tmp;
 }
 
-void	rules_sa_swap_top(t_stack **a)
+
+void	sa(t_stack **a)
 {
-	rules_s_swap_top(a);
+	swap(*a);
 	ft_putstr("sa\n");
 }
 
-void	rules_sb_swap_top(t_stack **b)
+
+void	sb(t_stack **b)
 {
-	rules_s_swap_top(b);
+	swap(*b);
 	ft_putstr("sb\n");
 }
 
-void	rules_ss_swap_top(t_stack **a, t_stack **b)
+
+void	ss(t_stack **a, t_stack **b)
 {
-	rules_sa_swap_top(a);
-	rules_sb_swap_top(b);
+	swap(*a);
+	swap(*b);
 	ft_putstr("ss\n");
 }

@@ -6,30 +6,33 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/28 16:33:09 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 09:01:20 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rules_pa_topb_to_topa(t_stack **a, t_stack **b)
+void	push(t_stack **src, t_stack **dest)
 {
-	t_stack	*temp;
+	t_stack	*tmp;
 
-	temp = (*b)->next;
-	(*b)->next = *a;
-	*a = *b;
-	*b = temp;
+	if (*src == NULL)
+		return ;
+	tmp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp;
+}
+
+
+void	pa(t_stack **a, t_stack **b)
+{
+	push(b, a);
 	ft_putstr("pa\n");
 }
 
-void	rules_pb_topa_to_topb(t_stack **b, t_stack **a)
+void	pb(t_stack **a, t_stack **b)
 {
-	t_stack	*temp;
-
-	temp = (*a)->next;
-	(*a)->next = *b;
-	*b = *a;
-	*a = temp;
+	push(a, b);
 	ft_putstr("pb\n");
 }

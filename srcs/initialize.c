@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 15:27:35 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 18:54:20 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 09:10:07 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,24 +52,24 @@ t_stack	*stack_new(int nb)
 	return (new);
 }
 
-void	stack_add_bottom(t_stack **stack, t_stack *new)
+void	stack_add_bottom(t_stack **x, t_stack *new)
 {
 	t_stack	*tail;
 
 	if (!new)
 		return ;
-	if (!*stack)
+	if (!*x)
 	{
-		*stack = new;
+		*x = new;
 		return ;
 	}
-	tail = get_stack_bottom(*stack);
+	tail = get_stack_bottom(*x);
 	tail->next = new;
 }
 
-t_stack	*get_stack_bottom(t_stack *stack)
+t_stack	*get_stack_bottom(t_stack *x)
 {
-	while (stack && stack->next != NULL)
-		stack = stack->next;
-	return (stack);
+	while (x && x->next != NULL)
+		x = x->next;
+	return (x);
 }

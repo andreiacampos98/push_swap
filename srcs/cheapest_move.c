@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 20:04:19 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/28 21:32:53 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 09:15:03 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void     do_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
 		do_r_both(a, b, &cost_a, &cost_b);
 	do_r_a(a, &cost_a);
 	do_r_b(b, &cost_b);
-	rules_pa_topb_to_topa(a, b);
+	pa(a, b);
 }
 
 void	do_cheapest_move(t_stack **a, t_stack **b)
@@ -39,7 +39,6 @@ void	do_cheapest_move(t_stack **a, t_stack **b)
 
 	tmp = *b;
 	cheapest = INT_MAX;
-	//printf("eu sou muito burra");
 	while (tmp)
 	{
 		if ((nb_abs(tmp->cost_a) + nb_abs(tmp->cost_b)) < nb_abs(cheapest))
@@ -49,8 +48,6 @@ void	do_cheapest_move(t_stack **a, t_stack **b)
 			cost_b = tmp->cost_b;
 		}
 		tmp = tmp->next;
-	}
-	//printf(" cost a %i\n", cost_a);
-	//printf("cost b %i\n", cost_b);	
+	}	
 	do_move(a, b, cost_a, cost_b);
 }

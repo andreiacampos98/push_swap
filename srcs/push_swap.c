@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:46:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/29 21:24:34 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 08:59:30 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	push_swap(t_stack **a, t_stack **b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*a))
-		rules_sa_swap_top(a);
+		sa(a);
 	else if (stack_size == 3)
 		three_argc_sort(a);
 	else if (stack_size > 3 && !is_sorted(*a))
-	{
 		sort(a, b);
-	}
 }
 
 int	is_sorted(t_stack *stack)
@@ -47,7 +45,7 @@ void	three_argc_sort(t_stack **a)
 	else if ((*a)->next->index == highest)
 		rra(a);
 	if ((*a)->index > (*a)->next->index)
-		rules_sa_swap_top(a);
+		sa(a);
 }
 
 int	find_highest_index(t_stack *stack)

@@ -6,39 +6,39 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 17:12:40 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 09:06:11 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	rules_r_top_bottom(t_stack **x)
+void	rotate(t_stack **x)
 {
 	t_stack	*tmp;
-	t_stack	*y;
+	t_stack	*tail;
 
 	tmp = *x;
 	*x = (*x)->next;
-	y = get_stack_bottom(*x);
+	tail = get_stack_bottom(*x);
 	tmp->next = NULL;
-	y->next = tmp;
+	tail->next = tmp;
 }
 
 void	ra(t_stack **a)
 {
-	rules_r_top_bottom(a);
+	rotate(a);
 	ft_putstr("ra\n");
 }
 
 void	rb(t_stack **b)
 {
-	rules_r_top_bottom(b);
+	rotate(b);
 	ft_putstr("rb\n");
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
-	ra(a);
-	rb(b);
+	rotate(a);
+	rotate(b);
 	ft_putstr("rr\n");
 }

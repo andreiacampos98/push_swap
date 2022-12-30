@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:12:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/21 17:12:22 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 08:29:19 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int	there_is_duplicates(char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		j = i + 1;
+		j = 1;
 		while (argv[j])
 		{
-			if (nb_cmp(argv[i], argv[j]) == 0)
+			if (j != i && nb_cmp(argv[i], argv[j]) == 0)
 				return (1);
 			j++;
 		}

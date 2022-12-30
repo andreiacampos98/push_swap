@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 11:35:44 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/29 20:54:54 by anaraujo         ###   ########.fr       */
+/*   Updated: 2022/12/30 09:17:51 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	get_target(t_stack **a, int b_idx,int target_idx, int target_position)
 		{
 			target_idx = tmp_a->index;
 			target_position = tmp_a->position;
-			//printf("%i\n", tmp_a->target_position);
 		}
 		tmp_a = tmp_a->next;
 	}
@@ -73,7 +72,6 @@ int	get_target(t_stack **a, int b_idx,int target_idx, int target_position)
 		{
 			target_idx = tmp_a->index;
 			target_position = tmp_a->position;
-			//printf("\n%i\n", tmp_a->target_position);
 		}
 		tmp_a = tmp_a->next;
 	}
@@ -88,22 +86,11 @@ void	get_target_position(t_stack **a, t_stack **b)
 	tmp_b = *b;
 	define_position(a);
 	define_position(b);
-	/*while(*a)
-	{
-		printf("%i", (*a)->position);
-		(*a) = (*a)->next;
-	}
-	while(tmp_b)
-	{
-		printf("%i", tmp_b->position);
-		tmp_b = tmp_b->next;
-	}*/
 	target_position = 0;
 	while (tmp_b)
 	{
 		target_position = get_target(a, tmp_b->index, INT_MAX, target_position);
 		tmp_b->target_position = target_position;
-		//printf("%i\n", tmp_b->target_position);
 		tmp_b = tmp_b->next;
 	}
 }
@@ -119,8 +106,6 @@ void	get_cost(t_stack **a, t_stack **b)
 	tmp_b = *b;
 	size_a = get_stack_size(tmp_a);
 	size_b = get_stack_size(tmp_b);
-	//printf("size a %i\n", size_a);
-	//printf("size b %i\n", size_b);
 	while (tmp_b)
 	{
 		tmp_b->cost_b = tmp_b->position;
@@ -131,11 +116,4 @@ void	get_cost(t_stack **a, t_stack **b)
 			tmp_b->cost_a = (size_a - tmp_b->target_position) * -1;
 		tmp_b = tmp_b->next;
 	}
-	/*while ((*b))
-	{
-		printf("%i", (*b)->cost_a);
-		printf("%i", (*b)->cost_b);
-		printf("\n");
-		(*b) = (*b)->next;
-	}*/
 }
