@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:22:57 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/30 14:53:43 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/02 19:44:34 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	execute(t_stack **a, t_stack **b, char *rule)
 		rrr(a, b);
 }
 
-void	read(t_stack **a, t_stack **b)
+void	read_instructions(t_stack **a, t_stack **b)
 {
 	char	*rule;
 

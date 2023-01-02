@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:29:17 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/30 11:29:20 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/02 19:49:00 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ t_stack	*stack_new(int value)
 t_stack	*get_stack_bottom(t_stack *stack)
 {
 	while (stack && stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}
+
+t_stack	*get_stack_before_bottom(t_stack *stack)
+{
+	while (stack && stack->next && stack->next->next != NULL)
 		stack = stack->next;
 	return (stack);
 }

@@ -6,7 +6,7 @@
 #    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 09:15:28 by marvin            #+#    #+#              #
-#    Updated: 2022/12/30 14:08:41 by anaraujo         ###   ########.fr        #
+#    Updated: 2023/01/02 19:55:18 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,10 @@ SRCS := ./srcs/rules_p.c 	./srcs/rules_r.c 	./srcs/rules_rr.c 		./srcs/rules_s.c
 OBJS := $(SRCS:.c=.o) 
 
 SRCS_BONUS := ./bonus/srcs/checker.c	./bonus/srcs/rules_p.c		./bonus/srcs/rules_r.c	\
-				./bonus/srcs/rules_rr.c	./bonus/srcs/rules_s.c		./bonus/srcs/stack.c
+				./bonus/srcs/rules_rr.c	./bonus/srcs/rules_s.c		./bonus/srcs/stack.c	\
+				./bonus/srcs/utils.c	./bonus/srcs/read_push_swap.c
 
-OBJS_BONUS := $(SRCS:.c=.o) 
+OBJS_BONUS := $(SRCS_BONUS:.c=.o) 
 
 all: $(NAME)
 
@@ -53,4 +54,4 @@ fclean: clean
 	rm -rf $(NAME)
 	rm -rf $(BONUS)
 
-re: fclean all BONUS
+re: fclean all bonus

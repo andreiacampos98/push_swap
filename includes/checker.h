@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:14:26 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/12/30 14:54:08 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/02 19:49:07 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,14 @@ void		rrr(t_stack **stack_a, t_stack **stack_b);
 void		rra(t_stack **stack_a);
 void		rrb(t_stack **stack_b);
 
-void	read(t_stack **a, t_stack **b);
+t_stack		*get_stack_bottom(t_stack *stack);
+t_stack	*get_stack_before_bottom(t_stack *stack);
+
+void	read_instructions(t_stack **a, t_stack **b);
 
 t_stack	*fill_stack_values(int ac, char **av);
+
+void	free_stack(t_stack **stack);
+void	exit_error(t_stack **stack_a, t_stack **stack_b);
 
 #endif

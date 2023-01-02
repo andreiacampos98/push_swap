@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rules_r.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/02 19:44:41 by anaraujo         ###   ########.fr       */
+/*   Created: 2022/12/15 10:52:08 by marvin            #+#    #+#             */
+/*   Updated: 2023/01/02 19:44:52 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker.h"
 
-static void	rotate(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack	*tail;
 
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tail = get_stack_bottom(*stack);
-	tmp->next = NULL;
-	tail->next = tmp;
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }
 
-void	ra(t_stack **stack_a)
+void	exit_error(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate(stack_a);
-	ft_putstr("ra\n");
+	if (stack_a == NULL || *stack_a != NULL)
+		free_stack(stack_a);
+	if (stack_b == NULL || *stack_b != NULL)
+		free_stack(stack_b);
+	write(2, "Error\n", 6);
+	exit (1);
 }
 
-void	rb(t_stack **stack_b)
-{
-	rotate(stack_b);
-	ft_putstr("rb\n");
-}
-
-void	rr(t_stack **stack_a, t_stack **stack_b)
-{
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_putstr("rr\n");
-}
