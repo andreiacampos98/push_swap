@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:22:57 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/02 19:44:34 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/02 21:10:20 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,28 @@ void	execute(t_stack **a, t_stack **b, char *rule)
 		rrr(a, b);
 }
 
+int	ft_alt_strchr(const char *s)
+{
+	int	count;
+
+	count = 0;
+	while (s[count] != '\0')
+	{
+		count++;
+	}
+	return (-1);
+}
+
 void	read_instructions(t_stack **a, t_stack **b)
 {
 	char	*rule;
 
-	while (1)
+	rule = "1";
+	printf("%s", rule);
+	while (ft_alt_strchr(rule) != '\0')
 	{
-		rule =  get_next_line(STDIN_FILENO);
+		rule =  get_next_line(1);
+		printf("%s", rule);
 		execute(a, b, rule);
 	}
 }
