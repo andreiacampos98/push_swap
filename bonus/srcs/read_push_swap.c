@@ -6,60 +6,68 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:22:57 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/02 21:10:20 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/03 21:55:37 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker.h"
 
-void	execute(t_stack **a, t_stack **b, char *rule)
+int	execute(t_stack *a, t_stack *b, char *rule)
 {
 	if (ft_strncmp(rule, "sa\n", 3) == 0)
+	{
 		sa(a);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "sb\n", 3) == 0)
+	{
 		sb(b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "ss\n", 3) == 0)
+	{
 		ss(a, b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "pa\n", 3) == 0)
+	{
 		pa(a, b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "pb\n", 3) == 0)
+	{
 		pb(a, b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "ra\n", 3) == 0)
+	{
 		ra(a);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "rb\n", 3) == 0)
+	{
 		rb(b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "rr\n", 3) == 0)
+	{
 		rr(a, b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "rra\n", 4) == 0)
+	{
 		rra(a);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "rrb\n", 4) == 0)
+	{
 		rrb(b);
+		return (0);
+	}
 	else if (ft_strncmp(rule, "rrr\n", 4) == 0)
+	{
 		rrr(a, b);
-}
-
-int	ft_alt_strchr(const char *s)
-{
-	int	count;
-
-	count = 0;
-	while (s[count] != '\0')
-	{
-		count++;
+		return (0);
 	}
-	return (-1);
-}
-
-void	read_instructions(t_stack **a, t_stack **b)
-{
-	char	*rule;
-
-	rule = "1";
-	printf("%s", rule);
-	while (ft_alt_strchr(rule) != '\0')
-	{
-		rule =  get_next_line(1);
-		printf("%s", rule);
-		execute(a, b, rule);
-	}
+	return (1);
 }
