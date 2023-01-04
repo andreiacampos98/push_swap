@@ -6,12 +6,11 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 20:58:54 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:54:52 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:04:55 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
-
 
 static void	do_rev_rotate_both(t_stack **a, t_stack **b,
 												int *cost_a, int *cost_b)

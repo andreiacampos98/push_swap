@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:48:59 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:02:45 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	rev_rotate(stack_b);
 	ft_putstr("rrr\n");
 }
-

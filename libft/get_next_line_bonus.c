@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 12:09:25 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/04 21:43:11 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:11:36 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
+void	str_null(char *str)
+{
+	str = malloc(1 * sizeof(char));
+	str[0] = '\0';
+}
 
 char	*ft_read(int fd, char *str)
 {
@@ -97,6 +103,7 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*str[10000];
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	str[fd] = ft_read(fd, str[fd]);

@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:49:15 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:02:38 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,3 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	push(stack_a, stack_b);
 	ft_putstr("pb\n");
 }
-

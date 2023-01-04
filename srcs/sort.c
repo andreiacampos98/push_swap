@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:43:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:51:10 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:02:52 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,3 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	if (!is_sorted(*stack_a))
 		shift_stack(stack_a);
 }
-

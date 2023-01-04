@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 09:55:33 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:46:11 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:03:50 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_stack	*fill_stack_values(int ac, char **av)
 	}
 	return (stack_a);
 }
-
 
 void	assign_index(t_stack *stack_a, int stack_size)
 {

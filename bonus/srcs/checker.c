@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:11:54 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/04 21:33:17 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2023/01/04 22:54:48 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,40 +21,6 @@ int	is_sorted(t_stack *stack)
 		stack = stack->next;
 	}
 	return (1);
-}
-
-void	ft_strdel(char **as)
-{
-	if (as == NULL)
-		return ;
-	free(*as);
-	*as = NULL;
-}
-
-void	stack_del(t_stack **stack)
-{
-	t_stack	*del;
-	t_stack	*tmp;
-
-	tmp = *stack;
-	while (tmp)
-	{
-		del = tmp;
-		tmp = tmp->next;
-		free(del);
-	}
-	*stack = NULL;
-}
-
-int		return_errors(char **instructions, t_stack **stack_a, t_stack **stack_b)
-{
-	ft_strdel(instructions);
-	if (*stack_a)
-		stack_del(stack_a);
-	if (*stack_b)
-		stack_del(stack_b);
-	write(2, "Error\n", 6);
-	return (0);
 }
 
 int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 10:52:08 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/02 19:44:52 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 22:58:33 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ void	exit_error(t_stack **stack_a, t_stack **stack_b)
 	write(2, "Error\n", 6);
 	exit (1);
 }
-

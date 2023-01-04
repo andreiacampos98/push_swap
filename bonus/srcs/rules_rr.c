@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/04 21:45:18 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2023/01/04 22:58:41 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
 }
-

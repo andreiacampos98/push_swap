@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:16:50 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:51:45 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 23:03:32 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !is_sorted(*stack_a))
@@ -62,7 +61,6 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	else if (stack_size > 3 && !is_sorted(*stack_a))
 		sort(stack_a, stack_b);
 }
-
 
 int	main(int ac, char **av)
 {
