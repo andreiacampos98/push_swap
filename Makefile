@@ -6,7 +6,7 @@
 #    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 09:15:28 by marvin            #+#    #+#              #
-#    Updated: 2023/01/03 21:42:03 by anaraujo         ###   ########.fr        #
+#    Updated: 2023/01/04 18:10:35 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJS := $(SRCS:.c=.o)
 
 SRCS_BONUS := ./bonus/srcs/checker.c	./bonus/srcs/rules_p.c		./bonus/srcs/rules_r.c	\
 				./bonus/srcs/rules_rr.c	./bonus/srcs/rules_s.c		./bonus/srcs/stack.c	\
-				./bonus/srcs/utils.c	./bonus/srcs/read_push_swap.c	./bonus/srcs/get_next_line.c
+				./bonus/srcs/utils.c	./bonus/srcs/read_push_swap.c	
 
 OBJS_BONUS := $(SRCS_BONUS:.c=.o) 
 

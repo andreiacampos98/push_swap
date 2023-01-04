@@ -6,13 +6,13 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:22:57 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/03 21:55:37 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 18:50:15 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/checker.h"
 
-int	execute(t_stack *a, t_stack *b, char *rule)
+int	execute(t_stack **a, t_stack **b, char *rule)
 {
 	if (ft_strncmp(rule, "sa\n", 3) == 0)
 	{
@@ -70,4 +70,20 @@ int	execute(t_stack *a, t_stack *b, char *rule)
 		return (0);
 	}
 	return (1);
+}
+
+void	read_instructions(t_stack **a, t_stack **b)
+{
+	char	*instruction;
+	(void)a;
+	(void)b;
+
+	while (1)
+	{
+		instruction = get_next_line(STDIN_FILENO);
+		if (instruction == NULL)
+			break ;
+		//execute(a, b, instruction);
+		free(instruction);
+	}
 }
