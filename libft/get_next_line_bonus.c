@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 12:09:25 by anaraujo          #+#    #+#             */
-/*   Updated: 2022/11/24 21:33:01 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:43:11 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ char	*ft_read(int fd, char *str)
 	char	*buff;
 	int		bytes;
 
+	if (!str)
+	{
+		str = malloc(1 * sizeof(char));
+		str[0] = '\0';
+	}
 	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (NULL);
@@ -26,6 +31,7 @@ char	*ft_read(int fd, char *str)
 		bytes = read(fd, buff, BUFFER_SIZE);
 		if (bytes == -1)
 		{
+			free(str);
 			free(buff);
 			return (NULL);
 		}
@@ -75,13 +81,13 @@ char	*ft_str_without_line(char *str)
 		free(str);
 		return (NULL);
 	}
-	str_without_line = malloc ((ft_strlen(str) - i + 1) * sizeof(char));
+	str_without_line = malloc((ft_strlen(str) - i + 1) * sizeof(char));
 	if (!str_without_line)
 		return (NULL);
 	i++;
 	j = 0;
 	while (str[i])
-		str_without_line[j++] = str [i++];
+		str_without_line[j++] = str[i++];
 	str_without_line[j] = '\0';
 	free(str);
 	return (str_without_line);
@@ -91,7 +97,6 @@ char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*str[10000];
-
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	str[fd] = ft_read(fd, str[fd]);
@@ -101,33 +106,3 @@ char	*get_next_line(int fd)
 	str[fd] = ft_str_without_line (str[fd]);
 	return (line);
 }
-
-/*int	main(void)
-{
-	char	*line;
-	int		i;
-	int		fd1;
-	int		fd2;
-	int		fd3;
-	fd1 = open("teste", O_RDONLY);
-	fd2 = open("tests1", O_RDONLY);
-	fd3 = open("tests2", O_RDONLY);
-	i = 1;
-	while (i < 7)
-	{
-		line = get_next_line(fd1);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd2);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd3);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		i++;
-	}
-	close(fd1);
-	close(fd2);
-	close(fd3);
-	return (0);
-}*/

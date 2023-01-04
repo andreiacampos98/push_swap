@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:13:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/02 19:44:44 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:45:18 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,16 @@ static void	rev_rotate(t_stack **stack)
 void	rra(t_stack **stack_a)
 {
 	rev_rotate(stack_a);
-	ft_putstr("rra\n");
 }
 
 void	rrb(t_stack **stack_b)
 {
 	rev_rotate(stack_b);
-	ft_putstr("rrb\n");
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rev_rotate(stack_a);
 	rev_rotate(stack_b);
-	ft_putstr("rrr\n");
 }
 

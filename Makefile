@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
+#    By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 09:15:28 by marvin            #+#    #+#              #
-#    Updated: 2023/01/04 18:10:35 by anaraujo         ###   ########.fr        #
+#    Updated: 2023/01/04 21:43:49 by nnuno-ca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,3 +55,5 @@ fclean: clean
 	rm -rf $(BONUS)
 
 re: fclean all bonus
+
+.SILENT:
