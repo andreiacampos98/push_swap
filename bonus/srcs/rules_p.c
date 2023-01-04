@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:26:26 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/02 19:44:32 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:44:24 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ static void	push(t_stack **src, t_stack **dest)
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
-	ft_putstr("pa\n");
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
-	ft_putstr("pb\n");
 }
 

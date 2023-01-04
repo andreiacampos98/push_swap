@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:22:57 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/04 18:50:15 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:43:27 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	read_instructions(t_stack **a, t_stack **b)
 		instruction = get_next_line(STDIN_FILENO);
 		if (instruction == NULL)
 			break ;
-		//execute(a, b, instruction);
+		execute(a, b, instruction);
 		free(instruction);
 	}
 }

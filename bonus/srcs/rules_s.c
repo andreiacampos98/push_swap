@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rules_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:58:47 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/02 19:44:47 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/04 21:45:29 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,15 @@ static void	swap(t_stack *stack)
 void	sa(t_stack **stack_a)
 {
 	swap(*stack_a);
-	ft_putstr("sa\n");
 }
 
 void	sb(t_stack **stack_b)
 {
 	swap(*stack_b);
-	ft_putstr("sb\n");
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(*stack_a);
 	swap(*stack_b);
-	ft_putstr("ss\n");
 }
