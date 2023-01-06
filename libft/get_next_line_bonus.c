@@ -23,11 +23,6 @@ char	*ft_read(int fd, char *str)
 	char	*buff;
 	int		bytes;
 
-	if (!str)
-	{
-		str = malloc(1 * sizeof(char));
-		str[0] = '\0';
-	}
 	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (NULL);
@@ -106,6 +101,11 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
+	if (!str[fd])
+	{
+		str[fd] = malloc(1 * sizeof(char));
+		str[fd][0] = '\0';
+	}
 	str[fd] = ft_read(fd, str[fd]);
 	if (!str[fd])
 		return (NULL);
