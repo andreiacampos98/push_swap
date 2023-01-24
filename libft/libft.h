@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:16:10 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/04 21:34:19 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2023/01/24 23:01:18 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # include <stdarg.h>
 # include <limits.h>
 
-int			ft_atoi(const char *str);
+long int	ft_atoi(const char *str);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
@@ -75,6 +75,9 @@ char		*ft_read(int fd, char *str);
 char		*ft_line(char *str);
 char		*ft_str_without_line(char *str);
 char		*get_next_line(int fd);
+void		handle_errors(char *error_msg);
+int			error(char *error_msg);
+int			ft_strend_cmp(char *name, char *end);
 
 typedef struct s_list
 {

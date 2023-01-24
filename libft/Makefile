@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+         #
+#    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 16:39:13 by marvin            #+#    #+#              #
-#    Updated: 2023/01/04 21:27:53 by nnuno-ca         ###   ########.fr        #
+#    Updated: 2023/01/16 18:59:23 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,8 @@ SRC = ./ft_atoi.c			\
 		./ft_putnbr.c		\
 		./ft_putstr.c		\
 		./ft_putptr.c		\
+		./ft_strend_cmp.c	\
+		./handle_errors.c	\
 		./get_next_line_bonus.c
 
 OBJS = $(SRC:.c=.o)

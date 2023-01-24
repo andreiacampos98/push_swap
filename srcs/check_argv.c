@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:12:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/30 10:45:41 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:58:37 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ int	is_correct_input(char **av)
 	while (av[i])
 	{
 		if (!arg_is_number(av[i]))
+			return (0);
+		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
 			return (0);
 		nb_zeros += arg_is_zero(av[i]);
 		i++;
