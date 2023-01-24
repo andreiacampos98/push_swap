@@ -6,7 +6,7 @@
 /*   By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 11:22:57 by anaraujo          #+#    #+#             */
-/*   Updated: 2023/01/04 23:00:28 by anaraujo         ###   ########.fr       */
+/*   Updated: 2023/01/24 23:41:00 by anaraujo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	read_instructions(t_stack **a, t_stack **b)
 	while (1)
 	{
 		instruction = get_next_line(STDIN_FILENO);
-		if (instruction == NULL)
+		if (instruction == NULL || instruction == "Error\n")
 			break ;
 		execute(a, b, instruction);
 		free(instruction);
