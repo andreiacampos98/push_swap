@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+         #
+#    By: anaraujo <anaraujo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 09:15:28 by marvin            #+#    #+#              #
-#    Updated: 2023/01/04 21:43:49 by nnuno-ca         ###   ########.fr        #
+#    Updated: 2023/01/24 22:21:54 by anaraujo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME := push_swap
 BONUS := checker
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror -I.
+CFLAGS := -Wall -Wextra -Werror -g -I.
 
 LIBFT := ./libft/libft.a
 
